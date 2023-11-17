@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon, UserIcon } from "@heroicons/react/24/outline";
 import { NavLink, Navigate, Outlet } from "react-router-dom";
-import { UserStateContext } from "../contexts";
+import { UseStateContext } from "../contexts";
 const navigation = [
   { name: "Dashboard", to: "/dashboard" },
   { name: "Survey", to: "/surveys" },
@@ -14,7 +14,7 @@ function classNames(...classes) {
 }
 
 export default function DefaultLayout() {
-  const { currentUser, userToken } = UserStateContext();
+  const { currentUser, userToken } = UseStateContext();
   if (!userToken) {
     return <Navigate to="/login" />;
   }

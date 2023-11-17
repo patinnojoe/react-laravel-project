@@ -1,2 +1,2 @@
-import { UserStateContext, StateContextProvider } from "./contextProvider";
-export { UserStateContext, StateContextProvider };
+import { UseStateContext, StateContextProvider } from "./contextProvider";
+export { UseStateContext, StateContextProvider };
