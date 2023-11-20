@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 const tmpSurvey = [
   {
     id: "1",
-    image_url: "image",
+    image_url:
+      "https://img.freepik.com/free-photo/young-adult-enjoying-yoga-nature_23-2149573175.jpg?w=900&t=st=1700231011~exp=1700231611~hmac=e368c68f7f73aa7c0db4bf06ef2973cfb2edcac69d2cecbfb348819dabdbf2cc",
     title: "patt",
     slug: "llll",
     staus: "true",
@@ -31,7 +32,8 @@ const tmpSurvey = [
 
   {
     id: "2",
-    image_url: "image2",
+    image_url:
+      "https://img.freepik.com/free-photo/hand-button-man-multimedia-mail_1150-1730.jpg?w=900&t=st=1700230823~exp=1700231423~hmac=8263843548f5d8b6247ca1c7aa113034bac3817b4b6a52afb01a82a01b9ef85d",
     title: "patt2",
     slug: "llll2",
     staus: "true",

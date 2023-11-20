@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function TButton({
+export default function TButton({
   color = "indigo",
   to = "",
-  circle = "",
+  circle = false,
   href = "",
-  link = "",
+  link = false,
   target = "_blank",
+  onClick = () => {},
   children,
 }) {
-  // SET CLASSES
   let classes = [
     "flex",
+    "items-center",
     "whitespace-nowrap",
     "text-sm",
     "border",
@@ -32,21 +33,22 @@ function TButton({
     }
   } else {
     classes = [...classes, "text-white", "focus:ring-2", "focus:ring-offset-2"];
+
     switch (color) {
       case "indigo":
         classes = [
           ...classes,
-          "text-indigo-600",
+          "bg-indigo-600",
           "hover:bg-indigo-700",
-          "focus:ring-indigo-600",
+          "focus:ring-indigo-500",
         ];
         break;
       case "red":
         classes = [
           ...classes,
-          "text-red-500",
+          "bg-red-600",
           "hover:bg-red-700",
-          "focus:border-red-500",
+          "focus:ring-red-500",
         ];
         break;
       case "green":
@@ -54,8 +56,9 @@ function TButton({
           ...classes,
           "bg-emerald-500",
           "hover:bg-emerald-600",
-          "focus:border-red-400",
+          "focus:ring-emerald-400",
         ];
+        break;
     }
   }
 
@@ -72,29 +75,27 @@ function TButton({
   } else {
     classes = [...classes, "p-0", "py-2", "px-4", "rounded-md"];
   }
+
   return (
-    <div>
+    <>
       {href && (
-        <a href={href} target={target} className={classes.join(" ")}>
+        <a href={href} className={classes.join(" ")} target={target}>
           {children}
         </a>
       )}
-
       {to && (
         <Link to={to} className={classes.join(" ")}>
           {children}
         </Link>
       )}
-
       {!to && !href && (
-        <button className={classes.join(" ")}>{children}</button>
+        <button onClick={onClick} className={classes.join(" ")}>
+          {children}
+        </button>
       )}
-    </div>
+    </>
   );
 }
-
-export default TButton;
-
 // prop validation
 TButton.propTypes = {
   color: PropTypes.string,
@@ -103,5 +104,6 @@ TButton.propTypes = {
   href: PropTypes.string,
   target: PropTypes.string,
   link: PropTypes.bool,
+  onClick: PropTypes.func,
   children: PropTypes.node,
 };

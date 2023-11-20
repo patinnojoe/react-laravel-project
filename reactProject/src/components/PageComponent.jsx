@@ -21,6 +21,6 @@ export default PageComponent;
 
 PageComponent.propTypes = {
   title: PropTypes.string,
-  buttons: PropTypes.any,
+  buttons: PropTypes.node,
   children: PropTypes.node,
 };
