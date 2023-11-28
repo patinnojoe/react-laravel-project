@@ -78,7 +78,7 @@ export const StateContextProvider = ({ children }) => {
     } else {
       localStorage.removeItem("TOKEN");
     }
-    _setUserToken();
+    _setUserToken(token);
   };
 
   const [survey, setSurveys] = useState(tmpSurvey);
